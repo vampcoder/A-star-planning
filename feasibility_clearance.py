@@ -43,16 +43,16 @@ for im in images:
 
     x, y  = thresh1.shape
     final_contours = []
-    print x, y
+  #  print x, y
     for i in range(len(contours)):
         cnt = contours[i]
         if cv2.contourArea(cnt) > 300 and cv2.contourArea(cnt) < 5000:
             final_contours.append(cnt)
     arr = np.zeros((x, y, 3), np.uint8)
-    print arr.shape
+   # print arr.shape
    # finalarr = [[10000 for p in range(y)] for p in range(x)]
     finalimg = np.zeros((x, y, 3), np.uint8)
-    print finalimg.shape
+   # print finalimg.shape
   #  print len(finalarr)
     max_dist = 0
     s = time.clock()
