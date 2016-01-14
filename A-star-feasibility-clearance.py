@@ -6,6 +6,7 @@ import math
 import time
 import Queue as Q
 
+
 class pixel(object):
     def __init__(self, penalty, pointx, pointy): # parent is that pixel from which this current pixel is generated
         self.penalty = penalty
@@ -17,14 +18,17 @@ class pixel(object):
 
 images = glob.glob('*.jpg')
 
+
 def penalty(ox, oy, nx, ny, penalty): #ox, oy:- old points  nx, ny :- new points
     return penalty + math.sqrt((ox-nx)*(ox-nx)+ (oy-ny)*(oy-ny))
+
 
 def check_boundaries(ex, ey, nx, ny): #ex, ey :- end points of frame
     if nx > -1 and ny > -1 and nx < ex and ny < ey:
         return True
     else:
         return False
+
 
 def fill_clearance(arr,cmax,  final_contours): # sx, sy :- source coordinates  dx, dy :- destination coordinates
     q = Q.PriorityQueue()
@@ -57,6 +61,7 @@ def fill_clearance(arr,cmax,  final_contours): # sx, sy :- source coordinates  d
                     if min_cost[nx][ny] > penalty(x, y, nx, ny, pen):
                         q.put(pixel(penalty(x,y,nx,ny,pen), nx, ny))
     return min_cost
+
 
 def main():
     for im in images:
@@ -96,5 +101,6 @@ def main():
         cv2.imshow('arr', arr)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
+
 
 main()
