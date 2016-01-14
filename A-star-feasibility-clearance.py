@@ -90,10 +90,10 @@ def main():
         print 'time: ',  time.clock()-start
         for i in xrange(x):
             for j in xrange(y):
-                pix_val = int(5*min_cost[i][j])
+                pix_val = int(255-4*min_cost[i][j])
                 if(min_cost[i][j] > 10000):
                     pix_val = 0
-                arr[i, j] = (pix_val, pix_val, 0)
+                arr[i, j] = (pix_val, pix_val, pix_val)
         for cnt in final_contours:
             cv2.fillConvexPoly(arr, cnt, [255, 255, 255])
 
