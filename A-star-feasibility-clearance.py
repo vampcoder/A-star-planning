@@ -29,7 +29,7 @@ def feasibility(nx, ny, img):  # function to check if pixel lies in obstacle
 
 def penalty1(clearance):
    alpha = 10000
-   sigma_sqr = 10
+   sigma_sqr = 1000
    return alpha*math.exp((-1)*clearance*clearance/sigma_sqr)
 
 
