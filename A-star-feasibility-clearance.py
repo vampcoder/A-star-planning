@@ -32,14 +32,11 @@ def penalty1(clearance):
    sigma_sqr = 1000
    return alpha*math.exp((-1)*clearance*clearance/sigma_sqr)
 
-
-
 def cost(ox, oy, nx, ny, penalty, clearance): #ox, oy:- old points  nx, ny :- new points
     return penalty + math.sqrt((ox-nx)*(ox-nx)+ (oy-ny)*(oy-ny))*(1+penalty1(clearance))
 
 def heuristic(nx, ny,dx, dy): #ox, oy:- old points  nx, ny :- new points
     return math.sqrt((nx-dx)*(nx-dx)+ (ny-dy)*(ny-dy))
-
 
 def check_boundaries1(ex, ey, nx, ny): #ex, ey :- end points of frame
     if nx > -1 and ny > -1 and nx < ex and ny < ey:
@@ -96,10 +93,10 @@ def bfs(arr, sx, sy, dx, dy, final_contours): # sx, sy :- source coordinates  dx
         for i in range(len(actions)):
             nx = int(actions[i][0] + x)
             ny = int(actions[i][1] + y)
-            if check_boundaries1(ex, ey, nx, ny) == True:
+            if check_boundaries(ex, ey, nx, ny) == True:
                 #if arr.item(nx, ny, 0) == 0 and arr.item(nx, ny, 1) == 0 and arr.item(nx, ny, 2) == 0:
                     pen = dist[x][y]
-                    pen_new = cost(x, y, nx, ny, pen, arr[nx][ny][0])
+                    pen_new = cost(x, y, nx, ny, pen, 255-arr[nx][ny][0])
                     h_new = heuristic(nx, ny, dx, dy)
                     if dist[nx][ny] > pen_new :
                         dist[nx][ny]  = pen_new
@@ -116,10 +113,6 @@ def bfs(arr, sx, sy, dx, dy, final_contours): # sx, sy :- source coordinates  dx
 function definition from Clearance-feasibility
 end
 '''
-
-
-
-
 
 '''
 function definition from Clearance-feasibility
@@ -218,12 +211,12 @@ def main():
 
         for i in xrange(x):
             for j in xrange(y):
-                pix_val = int(5*min_cost[i][j])
+                pix_val = int(255-5*min_cost[i][j])
                 if(min_cost[i][j] > 10000):
-                    pix_val = 255
+                    pix_val = 0
                 arr[i, j] = (pix_val, pix_val, pix_val)
         for cnt in final_contours:
-            cv2.fillConvexPoly(arr, cnt, [0, 0, 0])
+            cv2.fillConvexPoly(arr, cnt, [255, 255, 255])
 
         '''
         Code from A-star.py
