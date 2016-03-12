@@ -178,6 +178,7 @@ end
 
 
 def main():
+    counter  = 1
     for im in images:
 
         img = cv2.imread(im)
@@ -227,6 +228,10 @@ def main():
         dy = 190  # raw_input()
 
        # s = time.clock()
+        output = "Clearance/"+`counter`
+        output += ".jpg"
+        cv2.imwrite(output, arr)
+
         solution = bfs(arr, sx, sy, dx, dy, final_contours)
       #  print 'time: ', time.clock()-s
         if len(solution) == 0:
@@ -241,6 +246,11 @@ def main():
         cv2.circle(arr, (dy, dx), 2, [0, 255, 0])
         cv2.circle(img, (sy, sx), 2, [0, 255, 0])
         cv2.circle(img, (dy, dx), 2, [0, 255, 0])
+
+        output = "output/"+`counter`
+        output += ".jpg"
+        cv2.imwrite(output, arr)
+        counter += 1
 
         cv2.imshow('image', img)
         cv2.imshow('arr', arr)
