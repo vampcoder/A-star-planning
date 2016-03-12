@@ -1,6 +1,6 @@
 # A-star-planning
 
-<b> Prequisites</b>
+<b> Prerequisites</b>
 - Python
 - OpenCV
 - Numpy
