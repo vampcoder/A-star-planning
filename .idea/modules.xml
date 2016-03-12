@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/untitled.iml" filepath="$PROJECT_DIR$/.idea/untitled.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/A-star-planning.iml" filepath="$PROJECT_DIR$/.idea/A-star-planning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Artificial-Potential-Field/.idea/Artificial-Potential-Field.iml" filepath="$PROJECT_DIR$/../Artificial-Potential-Field/.idea/Artificial-Potential-Field.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Hybrid-Artificial-Potential-Field-A-star-Planning/.idea/Hybrid-Artificial-Potential-Field-A-star-Planning.iml" filepath="$PROJECT_DIR$/../Hybrid-Artificial-Potential-Field-A-star-Planning/.idea/Hybrid-Artificial-Potential-Field-A-star-Planning.iml" />
     </modules>
   </component>
 </project>
