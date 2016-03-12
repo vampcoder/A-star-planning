@@ -1,5 +1,11 @@
 # A-star-planning
 
+<b> Prequisites</b>
+- Python
+- OpenCV
+- Numpy
+- Matplotlib
+
 This is extended implementation of A-star algorithm.
 
 For basic knowledge of A-star , one can refer following links : https://en.wikipedia.org/wiki/A*_search_algorithm
