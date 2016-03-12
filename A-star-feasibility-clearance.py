@@ -110,7 +110,7 @@ def bfs(arr, sx, sy, dx, dy, final_contours): # sx, sy :- source coordinates  dx
     return []
 
 '''
-function definition from Clearance-feasibility
+function definition from A-star
 end
 '''
 
