@@ -224,7 +224,7 @@ def main():
         '''
         sx = 20 # raw_input("Enter source and destination Coordinates")
         sy = 20  # raw_input()
-        dx = 199   # raw_input()
+        dx = 190   # raw_input()
         dy = 190  # raw_input()
 
        # s = time.clock()
