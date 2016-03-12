@@ -249,7 +249,7 @@ def main():
 
         output = "output/"+`counter`
         output += ".jpg"
-        cv2.imwrite(output, arr)
+        cv2.imwrite(output, img)
         counter += 1
 
         cv2.imshow('image', img)
