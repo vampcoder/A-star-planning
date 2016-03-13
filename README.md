@@ -26,13 +26,13 @@ Input Images
 A* without applying clearance:
 
 ![alt text][logo10]
-[logo10]: withoutClearance\1.jpg "Sample Image1"
+[logo10]: withoutClearance/1.jpg "Sample Image1"
 
 ![alt text][logo11]
-[logo11]: withoutClearance\2.jpg "Sample Image2"
+[logo11]: withoutClearance/2.jpg "Sample Image2"
 
 ![alt text][logo12]
-[logo12]: withoutClearance\3.jpg "Sample Image3"
+[logo12]: withoutClearance/3.jpg "Sample Image3"
 
 
 For this we preprocess our input images to create clearances for robot.
