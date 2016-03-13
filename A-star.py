@@ -6,8 +6,6 @@ import math
 import Queue as Q
 import time
 
-
-
 class pixel(object):
     def __init__(self, penalty, pointx, pointy, parent, h): # parent is that pixel from which this current pixel is generated
         self.penalty = penalty
@@ -106,6 +104,7 @@ def bfs(arr, sx, sy, dx, dy, final_contours): # sx, sy :- source coordinates  dx
     return []
 
 def main():
+    counter = 1
     for im in images:
         img = cv2.imread(im)
 
@@ -139,7 +138,11 @@ def main():
             for i in range(len(solution)):
                 start = (solution[i][1], solution[i][0])
                 cv2.circle(arr,start, 1, [255, 0, 255])
-
+                cv2.circle(img, start, 1, [255, 255, 255])
+        output = "withoutClearance/"+`counter`
+        output += ".jpg"
+        cv2.imwrite(output, img)
+        counter += 1
         cv2.circle(arr, (sy, sx), 2, [0, 255, 0])
         cv2.circle(arr, (dy, dx), 2, [0, 255, 0])
         cv2.circle(img, (sy, sx), 2, [0, 255, 0])
