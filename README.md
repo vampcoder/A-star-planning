@@ -60,3 +60,5 @@ Output Images:
 
 ![alt text][logo9]
 [logo9]: output/3.jpg "Sample Image9"
+
+As you can see there is change in path followed by A-star. It avoids the obstacle to give shortest-optimal path.
