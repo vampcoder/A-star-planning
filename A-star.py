@@ -124,9 +124,9 @@ def main():
                 cv2.drawContours(img, [cnt],-1, [0, 255, 255])
                 cv2.fillConvexPoly(arr, cnt, [255, 255, 255])
                 final_contours.append(cnt)
-        sx = 80 # raw_input("Enter source and destination Coordinates")
-        sy = 80  # raw_input()
-        dx = 199   # raw_input()
+        sx = 20 # raw_input("Enter source and destination Coordinates")
+        sy = 20  # raw_input()
+        dx = 190   # raw_input()
         dy = 190  # raw_input()
 
        # s = time.clock()
