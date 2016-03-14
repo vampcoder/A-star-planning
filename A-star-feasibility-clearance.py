@@ -10,6 +10,7 @@ import Queue as Q
 function definition from A-star
 start
 '''
+
 class pixel1(object):
     def __init__(self, penalty, pointx, pointy, parent, h): # parent is that pixel from which this current pixel is generated
         self.penalty = penalty

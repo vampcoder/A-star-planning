@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/A-star-planning.iml" filepath="$PROJECT_DIR$/.idea/A-star-planning.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Artificial-Potential-Field/.idea/Artificial-Potential-Field.iml" filepath="$PROJECT_DIR$/../Artificial-Potential-Field/.idea/Artificial-Potential-Field.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Hybrid-Artificial-Potential-Field-A-star-Planning/.idea/Hybrid-Artificial-Potential-Field-A-star-Planning.iml" filepath="$PROJECT_DIR$/../Hybrid-Artificial-Potential-Field-A-star-Planning/.idea/Hybrid-Artificial-Potential-Field-A-star-Planning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Vision_Based_Motion_Planning_of_RoundBots/.idea/Vision_Based_Motion_Planning_of_RoundBots.iml" filepath="$PROJECT_DIR$/../Vision_Based_Motion_Planning_of_RoundBots/.idea/Vision_Based_Motion_Planning_of_RoundBots.iml" />
     </modules>
   </component>
 </project>
