@@ -201,7 +201,14 @@ def main():
                 final_contours.append(cnt)
         cmax = 50
         start = time.clock()
+        output = 'beforeplanningwithoutclearance/' + `counter`
+        output += ".jpg"
+        cv2.imwrite(output, arr)
+
         min_cost = fill_clearance(arr,cmax, final_contours)
+
+
+
         print 'time: ',  time.clock()-start
         '''
         for i in xrange(x):
@@ -218,6 +225,10 @@ def main():
                 arr[i, j] = (pix_val, pix_val, pix_val)
         for cnt in final_contours:
             cv2.fillConvexPoly(arr, cnt, [255, 255, 255])
+
+        output = 'beforeplanningwithclearance/' + `counter`
+        output += ".jpg"
+        cv2.imwrite(output, arr)
 
         '''
         Code from A-star.py

@@ -124,6 +124,10 @@ def main():
                 cv2.drawContours(img, [cnt],-1, [0, 255, 255])
                 cv2.fillConvexPoly(arr, cnt, [255, 255, 255])
                 final_contours.append(cnt)
+
+        output = 'beforeplanningwithoutclearance/' + `counter`
+        output += ".jpg"
+        cv2.imwrite(output, arr)
         sx = 20 # raw_input("Enter source and destination Coordinates")
         sy = 20  # raw_input()
         dx = 190   # raw_input()
