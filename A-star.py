@@ -109,9 +109,18 @@ def main():
         img = cv2.imread(im)
 
         cimg = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+        output = 'BinaryImages/' + `counter`
+        output += ".jpg"
+        cv2.imwrite(output, cimg)
         img2 = cv2.medianBlur(cimg,13)
+        output = 'AfterMedianBlurring/' + `counter`
+        output += ".jpg"
+        cv2.imwrite(output, img2)
 
         ret,thresh1 = cv2.threshold(cimg,40,255,cv2.THRESH_BINARY)
+        output = 'Afterthresholding/' + `counter`
+        output += ".jpg"
+        cv2.imwrite(output, thresh1)
         t2 = copy.copy(thresh1)
 
         x, y  = thresh1.shape
