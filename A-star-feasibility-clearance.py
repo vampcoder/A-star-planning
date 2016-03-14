@@ -222,10 +222,10 @@ def main():
         '''
         Code from A-star.py
         '''
-        sx = 20 # raw_input("Enter source and destination Coordinates")
-        sy = 20  # raw_input()
-        dx = 190   # raw_input()
-        dy = 190  # raw_input()
+        sx = 25 # raw_input("Enter source and destination Coordinates")
+        sy = 25  # raw_input()
+        dx = 159   # raw_input()
+        dy = 100  # raw_input()
 
        # s = time.clock()
         output = "Clearance/"+`counter`
