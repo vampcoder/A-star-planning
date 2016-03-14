@@ -127,12 +127,25 @@ def main():
         arr = np.zeros((x, y, 3), np.uint8)
         final_contours= []
         image, contours, hierarchy = cv2.findContours(t2,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+        arr2 = np.zeros((x,y,3), np.uint8)
+        for i in range(len(contours)):
+            cnt = contours[i]
+            cv2.drawContours(arr2, [cnt],-1, [255, 255, 255])
+        output = 'DetectionOfContours/' + `counter`
+        output += ".jpg"
+        cv2.imwrite(output, arr2)
+
+
         for i in range(len(contours)):
             cnt = contours[i]
             if cv2.contourArea(cnt) > 300 and cv2.contourArea(cnt) < 5000 :
                 cv2.drawContours(img, [cnt],-1, [0, 255, 255])
                 cv2.fillConvexPoly(arr, cnt, [255, 255, 255])
                 final_contours.append(cnt)
+
+        output = 'DetectionOfObstacles/' + `counter`
+        output += ".jpg"
+        cv2.imwrite(output, arr)
 
         output = 'beforeplanningwithoutclearance/' + `counter`
         output += ".jpg"
