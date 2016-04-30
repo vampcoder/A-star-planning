@@ -5,7 +5,7 @@ import time
 
 
 
-cap = cv2.VideoCapture(1 )
+cap = cv2.VideoCapture(0)
 h1 = 10
 s1 = 140
 v1 = 0
