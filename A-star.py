@@ -5,6 +5,9 @@ import glob
 import math
 import Queue as Q
 import time
+import matplotlib.pyplot as plt
+import scipy as sp
+from scipy.interpolate import interp1d
 
 class pixel(object):
     def __init__(self, penalty, pointx, pointy, parent, h): # parent is that pixel from which this current pixel is generated
