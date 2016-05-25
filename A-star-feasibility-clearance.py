@@ -6,8 +6,8 @@ import math
 import time
 import Queue as Q
 import matplotlib.pyplot as plt
-import scipy as sp
-from scipy.interpolate import interp1d
+#import scipy as sp
+#from scipy.interpolate import interp1d
 
 '''
 function definition from A-star
@@ -256,11 +256,11 @@ def main():
                 start = (solution[i][1], solution[i][0])
                 cv2.circle(arr,start, 1, [255, 0, 255])
                 cv2.circle(img, start, 1, [255, 0, 255])
-        '''
+
         with open("a.txt", 'w') as fp:
             for i in range(len(solution)):
                 fp.write(`solution[i][1]` + ' ' + `solution[i][0]` + '\n')
-
+        '''
         Spline Part for curve smoothning
         '''
         '''
