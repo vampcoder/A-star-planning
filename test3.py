@@ -42,6 +42,8 @@ while(1):
     mask = cv2.inRange(hsv,lower_blue, upper_blue)
 
     result = cv2.bitwise_and(frame,frame,mask = mask)
+    #cv2.imshow('mask', mask)
+    #k = cv2.waitKey(0)
     blur = cv2.blur(result,(5,5))
 
     bw = cv2.cvtColor(blur,cv2.COLOR_HSV2BGR)
