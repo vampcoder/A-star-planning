@@ -263,7 +263,7 @@ def main():
         '''
         Spline Part for curve smoothning
         '''
-        '''
+
         t = time.clock()
         px = []
         py = []
@@ -284,7 +284,7 @@ def main():
             start = (int(new_y[i]), int(new_x[i]))
             cv2.circle(arr, start, 1, [255, 255, 255])
             cv2.circle(img, start, 1, [255, 255, 255])
-        '''
+
 
         cv2.circle(arr, (sy, sx), 2, [0, 255, 0])
         cv2.circle(arr, (dy, dx), 2, [0, 255, 0])
