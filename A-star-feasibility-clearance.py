@@ -6,8 +6,8 @@ import math
 import time
 import Queue as Q
 import matplotlib.pyplot as plt
-#import scipy as sp
-#from scipy.interpolate import interp1d
+import scipy as sp
+from scipy.interpolate import interp1d
 
 '''
 function definition from A-star
@@ -180,6 +180,38 @@ end
 '''
 
 
+def smooth(path):
+
+        weight_data=0.001
+        weight_smooth=0.5
+        max_error=0.01
+        newpath = copy.deepcopy(path)
+
+        while True:
+            error = 0.0
+
+            for i in xrange(len(newpath)):
+                if i == 0 or i == (len(newpath) - 1):
+                    continue
+                temp = newpath[i][0]
+                temp2 = newpath[i][1]
+
+                newpath[i][0] += weight_data * (path[i][0] - newpath[i][0]) + weight_smooth * (
+                newpath[i + 1][0] + newpath[i - 1][0] - 2 * newpath[i][0])
+                newpath[i][1] += weight_data * (path[i][1] - newpath[i][1]) + weight_smooth * (
+                newpath[i + 1][1] + newpath[i - 1][1] - 2 * newpath[i][1])
+
+                error += abs(float(newpath[i][0] - temp)) + abs(float(newpath[i][1] - temp2))
+
+            if error <= max_error:
+                break
+
+        for i in xrange(len(newpath)):
+            path[i][0] = int(newpath[i][0])
+            path[i][1] = int(newpath[i][1])
+
+        return path
+
 
 def main():
     counter  = 1
@@ -252,7 +284,9 @@ def main():
         if len(solution) == 0:
             print 'No solution from source to destination'
         else:
+            solution = smooth(solution)
             for i in range(len(solution)):
+
                 start = (solution[i][1], solution[i][0])
                 cv2.circle(arr,start, 1, [255, 0, 255])
                 cv2.circle(img, start, 1, [255, 0, 255])
@@ -260,31 +294,6 @@ def main():
         with open("a.txt", 'w') as fp:
             for i in range(len(solution)):
                 fp.write(`solution[i][1]` + ' ' + `solution[i][0]` + '\n')
-        '''
-        Spline Part for curve smoothning
-        '''
-
-        t = time.clock()
-        px = []
-        py = []
-
-        for i in range(len(solution)):
-            px.append(solution[i][0])
-            py.append(solution[i][1])
-        points = zip(px,py)
-        points = sorted(points, key=lambda point:points[0])
-
-        px, py = zip(*points)
-        length = 100
-        new_x = np.linspace(min(px), max(px), length)
-        new_y = interp1d(px, py, kind='cubic')(new_x)
-
-        print 'spline : ' , time.clock()-t
-        for i in range(len(new_x)):
-            start = (int(new_y[i]), int(new_x[i]))
-            cv2.circle(arr, start, 1, [255, 255, 255])
-            cv2.circle(img, start, 1, [255, 255, 255])
-
 
         cv2.circle(arr, (sy, sx), 2, [0, 255, 0])
         cv2.circle(arr, (dy, dx), 2, [0, 255, 0])
