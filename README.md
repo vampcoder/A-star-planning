@@ -14,25 +14,19 @@ Now,  we are trying to guide a robot which has dimensions, so such robot should 
 
 Input Images
 
-![alt text][logo1]
-[logo1]: 1.jpg "Sample Image1"
+![Alt text](1.jpg?raw=true "Sample Image1")
 
-![alt text][logo2]
-[logo2]: 2.jpg "Sample Image2"
+![Alt text](2.jpg?raw=true "Sample Image2")
 
-![alt text][logo3]
-[logo3]: 3.jpg "Sample Image3"
+![Alt text](3.jpg?raw=true "Sample Image3")
 
 A* without applying clearance:
 
-![alt text][logo10]
-[logo10]: withoutClearance/1.jpg "Sample Image1"
+![Alt text](withoutClearance/1.jpg?raw=true "Sample Image1")
 
-![alt text][logo11]
-[logo11]: withoutClearance/2.jpg "Sample Image2"
+![Alt text](withoutClearance/2.jpg?raw=true "Sample Image2")
 
-![alt text][logo12]
-[logo12]: withoutClearance/3.jpg "Sample Image3"
+![Alt text](withoutClearance/3.jpg?raw=true "Sample Image3")
 
 
 For this we preprocess our input images to create clearances for robot.
