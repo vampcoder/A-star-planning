@@ -18,7 +18,6 @@ Input Images
 
 ![Alt text](2.jpg?raw=true "Sample Image2")
 
-![Alt text](3.jpg?raw=true "Sample Image3")
 
 A* without applying clearance:
 
@@ -31,14 +30,11 @@ A* without applying clearance:
 
 For this we preprocess our input images to create clearances for robot.
 
-![alt text][logo4]
-[logo4]: Clearance/1.jpg "Sample Image4"
+![Alt text](Clearance/1.jpg?raw=true "Sample Image4")
 
-![alt text][logo5]
-[logo5]: Clearance/2.jpg "Sample Image5"
+![Alt text](Clearance/2.jpg?raw=true "Sample Image5")
 
-![alt text][logo6]
-[logo6]: Clearance/3.jpg "Sample Image6"
+![Alt text](Clearance/3.jpg?raw=true "Sample Image6")
 
 Now on the basis of these clearnace values, we deviced our cost function as normal distribution of this clearance value.
 
@@ -46,13 +42,10 @@ After applying A* on these images , we get following output:
 
 Output Images:
 
-![alt text][logo7]
-[logo7]: output/1.jpg "Sample Image7"
+![Alt text](output/1.jpg?raw=true "Sample Image7")
 
-![alt text][logo8]
-[logo8]: output/2.jpg "Sample Image8"
+![Alt text](output/2.jpg?raw=true "Sample Image8")
 
-![alt text][logo9]
-[logo9]: output/3.jpg "Sample Image9"
+![Alt text](output/3.jpg?raw=true "Sample Image9")
 
 As you can see there is change in path followed by A-star. It avoids the obstacle to give shortest-optimal path.
